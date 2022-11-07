@@ -147,6 +147,14 @@
     margin: 0;
   }
 
+  .header-brand{
+    height: 40px;
+  }
+
+  .header-text {
+    font-size: 14px;
+  }
+
   .text-box {
     width: 400px;
   }

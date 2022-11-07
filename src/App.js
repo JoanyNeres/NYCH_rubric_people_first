@@ -331,7 +331,14 @@ function App() {
             </div>
           </div>
         </div>
-        {title !== "" ?
+        {title === "" ?
+        
+        <div className="button">
+          <button className="button-send-clear" type="submit" onClick={checkAnswer}>
+          SEND
+          </button>
+        </div> :
+        
         <div className="result">
           <div className="text-box">
             <p className="title"><strong>{title}</strong></p>
@@ -341,12 +348,8 @@ function App() {
             <button className="button-send-clear" onClick={refreshPage}>
             CLEAR
             </button>
-        </div> :
-        <div className="button">
-          <button className="button-send-clear" type="submit" onClick={checkAnswer}>
-          SEND
-          </button>
-        </div>}
+        </div>
+        }
         
     </form>
   );
