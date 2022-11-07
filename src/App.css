@@ -143,16 +143,21 @@
 
 @media screen and (max-width: 600px){
 
-  .header-brand, .header-text, .header-data, .statement label, .options {
+  .header-brand, .header-text, .header-data, .options {
     margin: 0;
   }
 
   .header-brand{
-    height: 40px;
+    height: 50px;
   }
 
   .header-text {
     font-size: 14px;
+  }
+  
+  .statement label{
+    margin-left: 10px;
+    margin-right: 10px;
   }
 
   .text-box {
