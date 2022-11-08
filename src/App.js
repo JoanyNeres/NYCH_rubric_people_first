@@ -1,5 +1,8 @@
 import './App.css';
 import React, { useState } from 'react';
+import Swal from 'sweetalert2'
+
+
 
 function App() {
 
@@ -50,12 +53,20 @@ function App() {
     const score = num1+num2+num3+num4+num5+num6+num7+num8
 
     if (persona === ""){
-      return alert("Oops! You missed to fill the persona's name.")
+      return Swal.fire({
+        icon: "warning",
+        title: "Oops! You missed to fill the persona's name.",
+        color: "#000000",
+        confirmButtonColor: "#006699"})
     }
 
     if ((num1 === 0) || (num2 === 0) || (num3 === 0) || (num4 === 0) ||
     (num5 === 0) || (num6 === 0) || (num7 === 0) || (num8 === 0)){
-      return alert("Oops! You missed to answer some question.")
+      return Swal.fire({
+        icon: "warning",
+        title: "Oops! You missed to answer some question.",
+        color: "#000000",
+        confirmButtonColor: "#006699"})
     }
 
     displayResult(score, persona)
