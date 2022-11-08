@@ -39,14 +39,14 @@ function App() {
   const checkAnswer = (event) => {
     event.preventDefault()
     const persona = document.querySelector('input[name="persona"]').value
-    const num1 = Number.parseInt(document.querySelector('input[name="statement_1"]:checked').value) ?? 0
-    const num2 = Number.parseInt(document.querySelector('input[name="statement_2"]:checked').value) ?? 0
-    const num3 = Number.parseInt(document.querySelector('input[name="statement_3"]:checked').value) ?? 0
-    const num4 = Number.parseInt(document.querySelector('input[name="statement_4"]:checked').value) ?? 0
-    const num5 = Number.parseInt(document.querySelector('input[name="statement_5"]:checked').value) ?? 0
-    const num6 = Number.parseInt(document.querySelector('input[name="statement_6"]:checked').value) ?? 0
-    const num7 = Number.parseInt(document.querySelector('input[name="statement_7"]:checked').value) ?? 0
-    const num8 = Number.parseInt(document.querySelector('input[name="statement_8"]:checked').value) ?? 0
+    const num1 = document.querySelector('input[name="statement_1"]:checked') ? Number.parseInt(document.querySelector('input[name="statement_1"]:checked').value) : 0
+    const num2 = document.querySelector('input[name="statement_2"]:checked') ? Number.parseInt(document.querySelector('input[name="statement_2"]:checked').value) : 0
+    const num3 = document.querySelector('input[name="statement_3"]:checked') ? Number.parseInt(document.querySelector('input[name="statement_3"]:checked').value) : 0
+    const num4 = document.querySelector('input[name="statement_4"]:checked') ? Number.parseInt(document.querySelector('input[name="statement_4"]:checked').value) : 0
+    const num5 = document.querySelector('input[name="statement_5"]:checked') ? Number.parseInt(document.querySelector('input[name="statement_5"]:checked').value) : 0
+    const num6 = document.querySelector('input[name="statement_6"]:checked') ? Number.parseInt(document.querySelector('input[name="statement_6"]:checked').value) : 0
+    const num7 = document.querySelector('input[name="statement_7"]:checked') ? Number.parseInt(document.querySelector('input[name="statement_7"]:checked').value) : 0
+    const num8 = document.querySelector('input[name="statement_8"]:checked') ? Number.parseInt(document.querySelector('input[name="statement_8"]:checked').value) : 0
     const score = num1+num2+num3+num4+num5+num6+num7+num8
 
     if (persona === ""){
@@ -84,7 +84,7 @@ function App() {
       <div className="header-data">
         <div className="name">
             <label for="name"><strong>Persona:</strong></label>
-            <input type="text" name="persona" id="persona" required/>
+            <input type="text" name="persona" id="persona"/>
         </div>
 
         <div className="program">
