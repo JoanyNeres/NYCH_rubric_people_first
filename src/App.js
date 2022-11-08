@@ -3,15 +3,13 @@ import React, { useState } from 'react';
 
 function App() {
 
-  const [score, setScore] = useState(0)
-
   const [title, setTitle] = useState("")
 
   const [description, setDescription] = useState("")
 
   const [URL, setURL] = useState("")
  
-  function displayResult(){
+  function displayResult(score){
 
     if ((score > 0) && (score < 9)) {
       setTitle("Not Yet Ready for an Online Experience")
@@ -36,7 +34,6 @@ function App() {
     setTitle("")
     setDescription("")
     setURL("")
-    setScore(0)
   }
 
   const checkAnswer = (event) => {
@@ -49,9 +46,9 @@ function App() {
     const num6 = Number.parseInt(document.querySelector('input[name="statement_6"]:checked').value)
     const num7 = Number.parseInt(document.querySelector('input[name="statement_7"]:checked').value)
     const num8 = Number.parseInt(document.querySelector('input[name="statement_8"]:checked').value)
+    const score = num1+num2+num3+num4+num5+num6+num7+num8
 
-    setScore(num1+num2+num3+num4+num5+num6+num7+num8)
-    displayResult()
+    displayResult(score)
   }
 
   const refreshPage = () => { 
