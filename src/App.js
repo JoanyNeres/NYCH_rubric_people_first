@@ -9,24 +9,24 @@ function App() {
 
   const [URL, setURL] = useState("")
  
-  function displayResult(score){
+  function displayResult(score, persona){
 
     if ((score > 0) && (score < 9)) {
       setTitle("Not Yet Ready for an Online Experience")
-      setDescription("Your persona is not ready to participate in an online experience yet. He/She will need a lot of support.")
-      setURL("https://cdn.discordapp.com/attachments/1016745958727491615/1038195678825951232/not_ready-gif.gif")
+      setDescription(persona + " is not ready to participate in an online experience yet. He/She will need a lot of support.")
+      setURL("https://cdn.discordapp.com/attachments/1016745958727491615/1039575599842344970/Face_to_face-pana.png")
     }
 
     if ((score > 8) && (score < 17)) {
       setTitle("Almost Ready for an Online Experience")
-      setDescription("Your persona is almost ready to participate in an online experience based on his/her skills, access to technology and preferences, but may need some support.")
-      setURL("https://cdn.discordapp.com/attachments/1016745958727491615/1038195679123750982/almost_ready-gif.gif")
+      setDescription(persona + " is almost ready to participate in an online experience based on his/her skills, access to technology and preferences, but may need some support.")
+      setURL("https://cdn.discordapp.com/attachments/1016745958727491615/1039578144023248906/Telecommuting-pana.png")
     }
 
     if ((score > 16) && (score < 25)) {
       setTitle("Ready for an Online Experience")
-      setDescription("Your persona is ready to participate in an online experience based on his/her skills, access to technology and preferences.")
-      setURL("https://cdn.discordapp.com/attachments/1016745958727491615/1038195679459278918/ready-gif.gif")
+      setDescription(persona + " is ready to participate in an online experience based on his/her skills, access to technology and preferences.")
+      setURL("https://cdn.discordapp.com/attachments/1016745958727491615/1039578191385337866/Done-pana.png")
     }
   }
 
@@ -38,17 +38,27 @@ function App() {
 
   const checkAnswer = (event) => {
     event.preventDefault()
-    const num1 = Number.parseInt(document.querySelector('input[name="statement_1"]:checked').value)
-    const num2 = Number.parseInt(document.querySelector('input[name="statement_2"]:checked').value)
-    const num3 = Number.parseInt(document.querySelector('input[name="statement_3"]:checked').value)
-    const num4 = Number.parseInt(document.querySelector('input[name="statement_4"]:checked').value)
-    const num5 = Number.parseInt(document.querySelector('input[name="statement_5"]:checked').value)
-    const num6 = Number.parseInt(document.querySelector('input[name="statement_6"]:checked').value)
-    const num7 = Number.parseInt(document.querySelector('input[name="statement_7"]:checked').value)
-    const num8 = Number.parseInt(document.querySelector('input[name="statement_8"]:checked').value)
+    const persona = document.querySelector('input[name="persona"]').value
+    const num1 = Number.parseInt(document.querySelector('input[name="statement_1"]:checked').value) ?? 0
+    const num2 = Number.parseInt(document.querySelector('input[name="statement_2"]:checked').value) ?? 0
+    const num3 = Number.parseInt(document.querySelector('input[name="statement_3"]:checked').value) ?? 0
+    const num4 = Number.parseInt(document.querySelector('input[name="statement_4"]:checked').value) ?? 0
+    const num5 = Number.parseInt(document.querySelector('input[name="statement_5"]:checked').value) ?? 0
+    const num6 = Number.parseInt(document.querySelector('input[name="statement_6"]:checked').value) ?? 0
+    const num7 = Number.parseInt(document.querySelector('input[name="statement_7"]:checked').value) ?? 0
+    const num8 = Number.parseInt(document.querySelector('input[name="statement_8"]:checked').value) ?? 0
     const score = num1+num2+num3+num4+num5+num6+num7+num8
 
-    displayResult(score)
+    if (persona === ""){
+      return alert("Oops! You missed to fill the persona's name.")
+    }
+
+    if ((num1 === 0) || (num2 === 0) || (num3 === 0) || (num4 === 0) ||
+    (num5 === 0) || (num6 === 0) || (num7 === 0) || (num8 === 0)){
+      return alert("Oops! You missed to answer some question.")
+    }
+
+    displayResult(score, persona)
   }
 
   const refreshPage = () => { 
@@ -74,12 +84,12 @@ function App() {
       <div className="header-data">
         <div className="name">
             <label for="name"><strong>Persona:</strong></label>
-            <input type="text" name="name" id="persona" />
+            <input type="text" name="persona" id="persona" required/>
         </div>
 
         <div className="program">
             <label for="program"><strong>Program:</strong></label>
-            <input type="text" name="program" id="program" />
+            <input type="text" name="program" id="program"/>
         </div>
       </div>
 

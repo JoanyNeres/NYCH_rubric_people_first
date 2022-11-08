@@ -1,11 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
-  font-family: 'Anonymous Pro', monospace;
+  font-family: 'proxima-nova', sans-serif;
 }
 
 .header{
@@ -26,7 +25,7 @@
   display: block;
   text-align: right;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 400;
   color: rgb(0,102,153);
   margin-right: 40px;
 }
@@ -96,7 +95,7 @@
   align-items: center;
   background-color: rgb(0,102,153);
   color: #ffff;
-  font-family: 'Anonymous Pro', monospace;
+  font-family: 'proxima-nova', sans-serif;
   margin-top: 32px;
   margin-bottom: 20px;
   height: 40px;
