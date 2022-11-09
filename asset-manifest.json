@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/NYCH_rubric_people_first/static/css/main.d410b348.css",
-    "main.js": "/NYCH_rubric_people_first/static/js/main.501f7c57.js",
+    "main.js": "/NYCH_rubric_people_first/static/js/main.ef7671df.js",
     "static/js/787.5f7c7a70.chunk.js": "/NYCH_rubric_people_first/static/js/787.5f7c7a70.chunk.js",
     "index.html": "/NYCH_rubric_people_first/index.html",
     "main.d410b348.css.map": "/NYCH_rubric_people_first/static/css/main.d410b348.css.map",
-    "main.501f7c57.js.map": "/NYCH_rubric_people_first/static/js/main.501f7c57.js.map",
+    "main.ef7671df.js.map": "/NYCH_rubric_people_first/static/js/main.ef7671df.js.map",
     "787.5f7c7a70.chunk.js.map": "/NYCH_rubric_people_first/static/js/787.5f7c7a70.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d410b348.css",
-    "static/js/main.501f7c57.js"
+    "static/js/main.ef7671df.js"
   ]
 }
