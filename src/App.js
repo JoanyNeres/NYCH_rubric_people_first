@@ -55,16 +55,54 @@ function App() {
     if (persona === ""){
       return Swal.fire({
         icon: "warning",
-        title: "Oops! You missed to fill the persona's name.",
+        title: "Oops! Please enter your persona's name.",
         color: "#000000",
         confirmButtonColor: "#006699"})
+    }
+
+    let forgetAlert = ""
+
+    if (num1 === 0) {
+      forgetAlert = "Q#1"
+    }
+
+    if (num2 === 0) {
+      forgetAlert = forgetAlert === "" ? "Q#2" : forgetAlert + ", Q#2"
+    }
+
+    if (num3 === 0) {
+      forgetAlert = forgetAlert === "" ? "Q#3" : forgetAlert + ", Q#3"
+    }
+
+    if (num4 === 0) {
+      forgetAlert = forgetAlert === "" ? "Q#4" : forgetAlert + ", Q#4"
+    }
+
+    if (num5 === 0) {
+      forgetAlert = forgetAlert === "" ? "Q#5" : forgetAlert + ", Q#5"
+    }
+
+    if (num6 === 0) {
+      forgetAlert = forgetAlert === "" ? "Q#6" : forgetAlert + ", Q#6"
+    }
+
+    if (num7 === 0) {
+      forgetAlert = forgetAlert === "" ? "Q#7" : forgetAlert + ", Q#7"
+    }
+
+    if (num8 === 0) {
+      forgetAlert = forgetAlert === "" ? "Q#8" : forgetAlert + ", Q#8"
+    }
+
+    if (forgetAlert.length > 3){
+      forgetAlert = forgetAlert.slice(0, -5) + " and" + forgetAlert.slice(forgetAlert.length-4)
     }
 
     if ((num1 === 0) || (num2 === 0) || (num3 === 0) || (num4 === 0) ||
     (num5 === 0) || (num6 === 0) || (num7 === 0) || (num8 === 0)){
       return Swal.fire({
         icon: "warning",
-        title: "Oops! You missed to answer some question.",
+        title: "Oops! Please answer " + forgetAlert + ".",
         color: "#000000",
         confirmButtonColor: "#006699"})
     }
@@ -86,9 +124,8 @@ function App() {
         </div>
         
         <div className="header-text">
-          <p>PEOPLE FIRST: IS A ONLINE EXPERIENCE</p>
-          <p>A GOOD FIT FOR YOUR CLIENTS?</p>
-          <p>Worksheets</p>
+          <p>Rubric for Online</p>
+          <p>Experience Readiness</p>
         </div>
       </div>
 
@@ -97,38 +134,33 @@ function App() {
             <label for="name"><strong>Persona:</strong></label>
             <input type="text" name="persona" id="persona"/>
         </div>
-
-        <div className="program">
-            <label for="program"><strong>Program:</strong></label>
-            <input type="text" name="program" id="program"/>
-        </div>
       </div>
 
         <div className="statement">
             <label for="statement_1">
-            1. My persona's need to participate in an online experience is ______.
+            1. My persona is ______ interested in participating in an online experience.
             </label>
         </div>
       
         <div className="options">
           <div className="option">      
-            <input type="radio" onClick={clickAnswer} name="statement_1" className="statement_1" id="high_1" value="3" />
-            <label for="high_1">
-            <strong>high</strong> – they can't access in-person services
+            <input type="radio" onClick={clickAnswer} name="statement_1" className="statement_1" id="very" value="3" />
+            <label for="very">
+            <strong>very</strong>
             </label>
           </div>
 
           <div className="option">
-            <input type="radio" onClick={clickAnswer} name="statement_1" className="statement_1" id="moderate_1" value="2" />
-            <label for="moderate_1">
-            <strong>moderate</strong> – they can access in-person services but with some difficulty
+            <input type="radio" onClick={clickAnswer} name="statement_1" className="statement_1" id="somewhat" value="2" />
+            <label for="somewhat">
+            <strong>somewhat</strong>
             </label>
           </div>
 
           <div className="option">
-            <input type="radio" onClick={clickAnswer} name="statement_1" className="statement_1" id="low_1" value="1" />
-            <label for="low_1">
-            <strong>low</strong> – they can access in-person services easily
+            <input type="radio" onClick={clickAnswer} name="statement_1" className="statement_1" id="not" value="1" />
+            <label for="not">
+            <strong>not</strong>
             </label>
           </div>
         </div>
@@ -275,7 +307,7 @@ function App() {
             <div className="option">
               <input type="radio" onClick={clickAnswer} name="statement_6" id="moderate_6" value="2" />
               <label for="moderate_6">
-              <strong>moderate</strong> - can do basic computer but with some support
+              <strong>moderate</strong> - can do basic computer tasks but with some support
               </label>
             </div>
 
@@ -322,7 +354,7 @@ function App() {
         <div>
           <div className="statement">
             <label for="statement_8">
-            8. My persona's ability to follow written instructions is _______.   
+            8. My persona can follow written instructions _______.   
             </label>
           </div>
 
