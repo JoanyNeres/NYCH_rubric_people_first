@@ -4,11 +4,11 @@ This form is part of a course that will help others NYCH collaborators identify 
 
 I made this form using react to calculate the score of answers and display a corresponding result to the user.
 
-<img src="https://cdn.discordapp.com/attachments/1016745958727491615/1039961771609428008/1.png" />
+<img src="https://cdn.discordapp.com/attachments/1016745958727491615/1042630063667019876/1.png" />
 
-A sweet alert will display if the user forget to fill the persona's name or to answer some question.
+A sweet alert will display if the user forget to fill the persona's name or to answer some questions.
 
-<img src="https://cdn.discordapp.com/attachments/1016745958727491615/1039961771957567508/2.png" />
+<img src="https://cdn.discordapp.com/attachments/1016745958727491615/1042630064002584666/2.png" />
 
 And these are the results displayed when the score is calculated.
 
